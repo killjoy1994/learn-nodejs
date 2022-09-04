@@ -14,3 +14,7 @@
 20220904	18:33:54	64da27dc-f89b-4f49-ab98-f7f798cfc48f	Error: Not alloswed by CORS
 20220904	18:34:06	77d22deb-46af-4c29-af70-05b0bb51bfaf	Error: Not alloswed by CORS
 20220904	18:34:41	bf34e005-7bad-4274-862d-317271fb6f91	Error: Not alloswed by CORS
+20220904	18:35:41	c862eb28-fff2-44f9-b08b-d3bc13c058c8	Error: Not alloswed by CORS
+20220904	18:36:17	f09a2009-db25-4c33-9f68-e70ced0b5ff1	Error: Not alloswed by CORS
+20220904	18:36:29	ea039b29-d9e9-4d77-88d7-c9e540c2f392	Error: Not alloswed by CORS
+20220904	18:37:57	1267a68b-e163-47cf-b8bc-5b7fc888ae80	Error: Not alloswed by CORS

@@ -13,10 +13,10 @@ const PORT = process.env.PORT || 3000;
 app.use(logger)
 
 // cors = Cross origin resource sharing
-const whitelist = ["https://www.yoursite.com", "http://127.0.0.1:5500", "http://localhost"];
+const whitelist = ["https://www.yoursite.com", "http://127.0.0.1:5500", "http://localhost:3000"];
 const corsOption = {
     origin: (origin, callback) => {
-        if(whitelist.indexOf(origin) !== -1) {
+        if(whitelist.indexOf(origin) !== -1 || !origin) {
             callback(null, true)
         } else {
             callback(new Error("Not alloswed by CORS"))
@@ -74,8 +74,15 @@ const three = (req, res) => {
 app.get("/chain(.html)?", [one,two,three])
 
 //fallback no route matches
-app.use("/*", (req,res) => {
-    res.status(404).sendFile(path.join(__dirname, "views", "404.html"))
+app.all("*", (req,res) => {
+    res.status(404);
+    if(req.accepts(".html")) {
+        res.sendFile(path.join(__dirname, "views", "404.html"))
+    } else if(req.accepts(".json")) {
+        res.json({error: "404 not found"})
+    } else {
+        res.type("txt").send("404 not found")
+    }
 })
 
 app.use(errorHandler)
