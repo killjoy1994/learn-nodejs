@@ -2,6 +2,7 @@ const { urlencoded } = require("express");
 const express = require("express");
 const { json } = require("express/lib/response");
 const cors = require("cors");
+const corsOptions = require("./config/corsOptions")
 const app = express();
 const path = require("path");
 const {logger} = require('./middleware/logEvents');
@@ -13,19 +14,9 @@ const PORT = process.env.PORT || 3000;
 app.use(logger)
 
 // cors = Cross origin resource sharing
-const whitelist = ["https://www.yoursite.com", "http://127.0.0.1:5500", "http://localhost:3000"];
-const corsOption = {
-    origin: (origin, callback) => {
-        if(whitelist.indexOf(origin) !== -1 || !origin) {
-            callback(null, true)
-        } else {
-            callback(new Error("Not alloswed by CORS"))
-        }
-    },
-    optionsSuccessStatus: 200 
-}
-app.use(cors(corsOption))
+app.use(cors(corsOptions))
 
+//built-in middlware to handle urlencoded-form data
 app.use(express.urlencoded({extended:false}))
 
 // built in middleware for json
@@ -33,10 +24,9 @@ app.use(express.json());
 
 // serve static files
 app.use(express.static(path.join(__dirname, "/public")))
-app.use("/subdir", express.static(path.join(__dirname, "/public")))
 
+//routes
 app.use("/", require("./routes/root"))
-app.use("/subdir", require("./routes/subdir"))
 app.use("/employees", require("./routes/api/employees"))
 
 //fallback no route matches
