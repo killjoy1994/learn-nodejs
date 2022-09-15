@@ -18,3 +18,19 @@
 20220904	18:36:17	f09a2009-db25-4c33-9f68-e70ced0b5ff1	Error: Not alloswed by CORS
 20220904	18:36:29	ea039b29-d9e9-4d77-88d7-c9e540c2f392	Error: Not alloswed by CORS
 20220904	18:37:57	1267a68b-e163-47cf-b8bc-5b7fc888ae80	Error: Not alloswed by CORS
+20220911	16:14:52	2d7257ca-b42c-4f27-82e9-388bed9181ad	TypeError: Cannot read properties of undefined (reading 'split')
+20220911	16:15:35	c8f74434-14da-4a46-a394-79c1c5181373	TypeError: Cannot read properties of undefined (reading 'split')
+20220911	16:17:53	7a224362-d7f0-4c6f-9bd7-2948dcda2a5e	TypeError: Cannot read properties of undefined (reading 'username')
+20220911	16:18:13	cb343ac1-f018-425e-a605-b0a4fafcd74e	TypeError: Cannot read properties of undefined (reading 'username')
+20220911	16:25:14	8c7f442e-6c7f-427d-9174-0df89c7c78e1	TypeError: Cannot read properties of undefined (reading 'username')
+20220911	16:28:44	5f69488c-a827-4876-88dd-527a386af8c1	TypeError: Cannot read properties of undefined (reading 'username')
+20220914	18:58:24	654a2a62-93d2-4c8d-87a5-9f5ed91ff5cb	TypeError: Cannot read properties of undefined (reading 'username')
+20220914	18:59:07	da05e651-43fc-4e3c-a0fa-69324a9e8913	TypeError: Cannot read properties of undefined (reading 'username')
+20220914	23:45:05	df2d552d-a6f9-4cfe-9cb4-6b7459e28ff9	RangeError: Invalid status code: {
+  accessToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhZ3VzIiwiaWF0IjoxNjYzMTczOTA1LCJleHAiOjE2NjMxNzM5MzV9.4hnE15ToeztrlR93UHZvwiFj5IsXE1Cl6XQ2EYr-VvY'
+}
+20220914	23:49:04	060de488-4b3c-4838-aad5-ed789fac3ea9	RangeError: Invalid status code: {
+  accessToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhZ3VzTnVncm9obyIsImlhdCI6MTY2MzE3NDE0NCwiZXhwIjoxNjYzMTc0MTc0fQ.mGKtRN94hxbEPuf2gGvo86M6yghCvNefrC2g69yZjHs'
+}
+20220915	21:24:25	c3a0f8d1-6c47-4b5c-a5e9-9954581a98bb	Error: Cannot set headers after they are sent to the client
+20220915	21:25:33	4c977117-ff65-4092-9eff-f2bdb7c1db72	Error: Cannot set headers after they are sent to the client
