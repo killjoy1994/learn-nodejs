@@ -34,3 +34,8 @@
 }
 20220915	21:24:25	c3a0f8d1-6c47-4b5c-a5e9-9954581a98bb	Error: Cannot set headers after they are sent to the client
 20220915	21:25:33	4c977117-ff65-4092-9eff-f2bdb7c1db72	Error: Cannot set headers after they are sent to the client
+20220918	01:14:09	df5d5d58-eb8d-421b-8cba-436ba8f6dbee	Error: Cannot set headers after they are sent to the client
+20220918	01:15:06	5a475832-df71-4d2f-96f2-e99815ed7183	Error: Cannot set headers after they are sent to the client
+20220918	01:16:08	6be17d5e-f1d6-4d56-8581-7d7e0c5f2947	Error: Cannot set headers after they are sent to the client
+20220918	01:16:25	6df1a4f9-f831-4e3c-8217-44edf14e6833	TypeError: Cannot read properties of undefined (reading 'UserInfo')
+20220918	01:18:18	6472b915-cf59-4b7a-a35f-e2214d123c07	Error: Cannot set headers after they are sent to the client
