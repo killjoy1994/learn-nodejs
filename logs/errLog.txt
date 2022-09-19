@@ -39,3 +39,12 @@
 20220918	01:16:08	6be17d5e-f1d6-4d56-8581-7d7e0c5f2947	Error: Cannot set headers after they are sent to the client
 20220918	01:16:25	6df1a4f9-f831-4e3c-8217-44edf14e6833	TypeError: Cannot read properties of undefined (reading 'UserInfo')
 20220918	01:18:18	6472b915-cf59-4b7a-a35f-e2214d123c07	Error: Cannot set headers after they are sent to the client
+20220919	19:49:44	bcca69b7-a1b8-4e1c-824a-93dee6fe82b6	TypeError: Cannot read properties of undefined (reading 'UserInfo')
+20220919	20:01:21	122e84c2-bba2-4c30-bd83-ae050b2d24b5	TypeError: Cannot read properties of undefined (reading 'UserInfo')
+20220920	04:10:04	46a62b5b-3be1-4d67-8d38-0d64ad855afd	TypeError: Cannot read properties of undefined (reading 'UserInfo')
+20220920	04:12:16	77733e5b-99a6-49b5-830d-5b25571cb463	TypeError: Cannot read properties of undefined (reading 'UserInfo')
+20220920	04:14:15	7a9c6c78-1abe-42f8-a1f7-3caccb4bedc1	TypeError: Cannot read properties of undefined (reading 'UserInfo')
+20220920	04:16:00	821445be-1083-4b40-9e48-a7b682e1be4d	TypeError: Cannot read properties of undefined (reading 'UserInfo')
+20220920	04:23:29	25343524-1582-4d1e-a191-1393764840fe	TypeError: Cannot read properties of undefined (reading 'UserInfo')
+20220920	04:24:11	69cb9a61-5720-4dd9-be97-67964465a79b	TypeError: Cannot read properties of undefined (reading 'UserInfo')
+20220920	04:30:38	8a948ad4-e967-4f0d-9e21-ebf9361a02eb	TypeError: Cannot read properties of undefined (reading 'UserInfo')

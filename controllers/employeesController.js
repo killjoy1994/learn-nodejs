@@ -1,58 +1,79 @@
-const data = {
-    employees: require("../model/employees.json"),
-    setEmployees: function (data) {
-        this.employees = data;
-    }
+const Employees = require("../model/Employee");
+
+const getAllEmployees = async (req, res) => {
+  const employees = await Employees.find();
+  if (!employees) res.sendStatus(204).json({ message: "No employees found" });
+  res.json(employees);
 };
 
+const createNewEmployee = async (req, res) => {
+  if (!req?.body?.firstname || !req?.body?.lastname) {
+    return res
+      .sendStatus(400)
+      .json({ message: "Firstname and Lastname are required" });
+  }
 
-const getAllEmployees = (req, res) => {
-    res.json(data.employees);
+  try {
+    const result = await Employees.create({
+      firstname: req.body.firstname,
+      lastname: req.body.lastname,
+    });
+    res.sendStatus(201).json(result);
+  } catch (error) {
+    console.error(error);
+  }
 };
 
-const createNewEmployee = (req, res) => {
-    const newEmployee = {
-        id: data.employees[data.employees.length - 1].id + 1 || 1,
-        firstName: req.body.firstName,
-        lastName: req.body.lastName
-    }
+const updateEmployee = async (req, res) => {
+  if (!req?.body?.id) {
+    return res.status(400).json({ message: "Id parameter is required" });
+  }
 
-    if(!newEmployee.firstName || !newEmployee.lastName) {
-        res.status(400).json({"message": "first and last names are required"})
-    }
+  const employee = await Employees.findOne({ _id: req.body.id }).exec();
 
-    data.setEmployees([...data.employees, newEmployee]);
-    res.status(200).json(data.employees);
-}
+  if (!employee) {
+    return res
+      .status(204)
+      .json({ message: `No employee matches with id: ${req.body.id}.` });
+  }
 
-const updateEmployee = (req, res) => {
-   const employee = data.employees.find(emp => emp.id === +req.body.id);
-   if(!employee) res.status(400).json({"message": `Employee with id: ${req.body.id} not found`})
+  if (req.body?.firstname) employee.firstname = req.body.firstname;
+  if (req.body?.lastname) employee.lastname = req.body.lastname;
+  const result = await employee.save();
+  res.json(result);
+};
 
-   if(req.body.firstName) employee.firstName = req.body.firstName;
-   if(req.body.lastName) employee.lastName = req.body.lastName;
-   
-   const filteredArray = data.employees.filter(emp => emp.id !== +req.body.id);
-   const unsortedArray = [...filteredArray, employee];
-   data.setEmployees(unsortedArray.sort((a, b) => a.id > b.id ? 1 : a.id < b.id ? -1 : 0));
-   res.json(data.employees)
-}
+const deleteEmployee = async (req, res) => {
+  if (!req?.body?.id)
+    return res.status(400).json({ message: "Id parameter is required!" });
 
-const deleteEmployee = (req, res) => {
-    const employee = data.employees.find(emp => emp.id === +req.body.id);
-    if(!employee) res.status(400).json({"message": `Employee with id: ${req.body.id} not found`});
+  const employee = await Employees.findOne({ _id: req.body.id }).exec();
+  if (!employee) {
+    return res
+      .status(204)
+      .json({ message: `No employee matches with id: ${req.body.id}.` });
+  }
 
-    const filteredArray = data.employees.filter(emp => emp.id !== +req.body.id);
-    data.setEmployees([...filteredArray]);
-    res.json(data.employees);
-}
+  const result = await Employees.deleteOne({ _id: req.body.id });
+  res.json(result);
+};
 
-const getEmployee = (req, res) => {
-    console.log(req)
-    const employee = data.employees.find(emp => emp.id === +req.params.id);
-    if(!employee) res.status(400).json({"message": `Employee with id: ${req.params.id} not found`});
+const getEmployee = async (req, res) => {
+  if (!req?.params?.id)
+    return req.status(400).json({ message: "Employee ID required" });
+  const employee = await Employees.findOne({ _id: req.params.id }).exec();
+  if (!employee)
+    return res
+      .status(204)
+      .json({ message: `No employee matches with id: ${req.params.id}.` });
 
-    res.json(employee)
-}
+  res.json(employee);
+};
 
-module.exports = {getAllEmployees, createNewEmployee, updateEmployee, deleteEmployee, getEmployee};
+module.exports = {
+  getAllEmployees,
+  createNewEmployee,
+  updateEmployee,
+  deleteEmployee,
+  getEmployee,
+};
